@@ -102,8 +102,24 @@
 
 이미지 저장
 
-윤곽 효과 저장
+- 윤곽 효과 저장
 
         img = Image.open(r'C:\Users\PC\OneDrive\문서\GitHub\-4-Image_SoundFile\cat-323262_640.jpg')
         img_contour = img.filter(ImageFilter.CONTOUR)
         img_contour.save('cat_contour.jpg) 
+
+이미지를 바이트 배열로 변환
+
+        img = Image.open(r'C:\Users\PC\OneDrive\문서\GitHub\-4-Image_SoundFile\cat-323262_640.jpg', mode='r')
+
+        buffer = io.BytesIO()
+        img.save(buffer, format='PNG')
+        buffer.seek(0)
+        #결과 : <_io.BytesIO object at 0x000001E4A29AF830>
+
+넘파이 배열을 이미지로 변환
+
+        img = Image.open(r'C:\Users\PC\OneDrive\문서\GitHub\-4-Image_SoundFile\cat-323262_640.jpg', mode='r')
+        img_np = np.array(img) #이미지를 Numpy 배열로 변환
+        im = Image.fromarray(img_np)
+        im.show()
