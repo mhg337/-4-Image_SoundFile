@@ -85,5 +85,25 @@
 
 ![cat7](https://github.com/mhg337/-4-Image_SoundFile/assets/144089001/b1e6996b-c560-4e0d-8a52-460eb17f79d9)
 
+이미지 합치기
 
+        image1 = Image.open(r'C:\Users\PC\OneDrive\문서\GitHub\-4-Image_SoundFile\cat-323262_640.jpg')
 
+        image2 = Image.open(r'C:\Users\PC\OneDrive\문서\GitHub\-4-Image_SoundFile\cat_3.jpg')
+
+        image1 = image1.resize((450, 163))
+        image2 = image2.resize((450, 163))
+        image1_size = image1.size
+        image2_size = image2.size
+        new_image = Image.new('RGB',(2*image1_size[0], image1_size[1]), (250,250,250))
+        new_image.paste(image1,(0,0))
+        new_image.paste(image2,(image1_size[0],0))
+        new_image.show()
+
+이미지 저장
+
+윤곽 효과 저장
+
+        img = Image.open(r'C:\Users\PC\OneDrive\문서\GitHub\-4-Image_SoundFile\cat-323262_640.jpg')
+        img_contour = img.filter(ImageFilter.CONTOUR)
+        img_contour.save('cat_contour.jpg) 
