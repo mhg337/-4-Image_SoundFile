@@ -68,3 +68,17 @@
         img_blur.show()
 
 ![cat_5](https://github.com/mhg337/-4-Image_SoundFile/assets/144089001/d7ae63be-90d1-42ee-8b30-91713529dbdd)
+
+윤곽 효과
+
+        img = Image.open(r'C:\Users\PC\OneDrive\문서\GitHub\-4-Image_SoundFile\cat-323262_640.jpg')
+        img_contour = img.filter(ImageFilter.CONTOUR)
+        img_contour.show()
+
+스무스 효과
+
+        img = Image.open(r'C:\Users\PC\OneDrive\문서\GitHub\-4-Image_SoundFile\cat-323262_640.jpg')
+        img_detail = img.filter(ImageFilter.SMOOTH)
+        img_detail.show()
+
+
