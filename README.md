@@ -1,6 +1,7 @@
 # 4주차 이미지, 음성파일 처리
 
 라이브러리 불러오기
+
 from PIL import Image
 from PIL import ImageFilter
 from PIL import Image
