@@ -75,10 +75,15 @@
         img_contour = img.filter(ImageFilter.CONTOUR)
         img_contour.show()
 
+![cat6](https://github.com/mhg337/-4-Image_SoundFile/assets/144089001/16a9f60b-54f5-4fc6-83a3-f49cc1b470d9)
+
 스무스 효과
 
         img = Image.open(r'C:\Users\PC\OneDrive\문서\GitHub\-4-Image_SoundFile\cat-323262_640.jpg')
         img_detail = img.filter(ImageFilter.SMOOTH)
         img_detail.show()
+
+![cat7](https://github.com/mhg337/-4-Image_SoundFile/assets/144089001/b1e6996b-c560-4e0d-8a52-460eb17f79d9)
+
 
 
