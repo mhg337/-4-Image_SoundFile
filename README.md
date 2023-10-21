@@ -15,3 +15,5 @@
     img = Image.open(r'C:\Users\PC\OneDrive\문서\GitHub\-4-Image_SoundFile\cat-323262_640.jpg')
     img_resized = img.resize((400,300))
     img_resized.show()
+
+https://github.com/mhg337/-4-Image_SoundFile/issues/1#issue-1955486029
