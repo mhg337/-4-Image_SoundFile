@@ -100,6 +100,8 @@
         new_image.paste(image2,(image1_size[0],0))
         new_image.show()
 
+![cat_+](https://github.com/mhg337/-5-Image_SoundFile/assets/144089001/d33458a8-834b-474c-a8f6-78f510cfb9ed)
+
 이미지 저장
 
 - 윤곽 효과 저장
@@ -123,3 +125,5 @@
         img_np = np.array(img) #이미지를 Numpy 배열로 변환
         im = Image.fromarray(img_np)
         im.show()
+
+![cat_8](https://github.com/mhg337/-5-Image_SoundFile/assets/144089001/fadf114f-5e52-46f3-8050-05eaf6b36bfa)
