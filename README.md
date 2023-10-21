@@ -16,4 +16,4 @@
     img_resized = img.resize((400,300))
     img_resized.show()
 
-https://github.com/mhg337/-4-Image_SoundFile/issues/1#issue-1955486029
+![cat-323262_640](https://user-images.githubusercontent.com/144089001/277109754-af1632b5-2109-4fe9-a383-62168575ffa5.jpg)
