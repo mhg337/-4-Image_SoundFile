@@ -132,3 +132,98 @@
 ![cat_8](https://github.com/mhg337/-5-Image_SoundFile/assets/144089001/fadf114f-5e52-46f3-8050-05eaf6b36bfa)
 
 ## 음성 파일 처리
+
+- 라이브러리 불러오가
+    
+      import soundfile as sf
+      import pydub
+      import librosa
+      import librosa.display
+      import IPython.display as ipd
+      import numpy as np
+      import matplotlib.pyplot as plt
+
+- 음성 파일을 읽고 재생, 메타정보를 출력
+
+      file_path = r"C:\Users\PC\OneDrive\문서\GitHub\-5-Image_SoundFile\Monologue.mp3"
+
+      data, sample_rate = sf.read(file_path)
+
+      print("Sample Rate:", sample_rate)
+      print("Duration:", len(data) / sample_rate, "seconds")
+
+      audio = pydub.AudioSegment.from_file(file_path)
+      audio.play()
+
+- 음성파일 Hz 변환
+
+      sf.write('./' + '16k.wav' , y, origin_sr, format='WAV', endian='LITTLE', subtype='PCM_16')
+      sf.write('./' + '8k.wav', resample, resample_sr, format='WAV', endian='LITTLE', subtype='PCM_16'
+
+- 음성파일 그려보기
+
+
+      def down_sample(r"C:\Users\PC\OneDrive\문서\GitHub\-5-Image_SoundFile\Monologue.wav", origin_sr, resample_sr):
+          y, sr = librosa.load(input_wav, sr=origin_sr)
+          resample = librosa.resample(y, sr, resample_sr)
+
+      plt.figure(figsize=(10, 4))
+      plt.subplot(2, 1, 1)
+      time1 = np.linspace(0, len(y) / sr, len(y))
+      plt.plot(time1, y)
+      plt.title('Original Wav')
+
+      plt.subplot(2, 1, 2)
+      time2 = np.linspace(0, len(resample) / resample_sr, len(resample))
+      plt.plot(time2, resample)
+      plt.title('Resampled Wav')
+
+      plt.tight_layout()
+
+- 음성파일 변환 후 시각
+
+  푸리에 변환
+
+      file_path = r"C:\Users\PC\OneDrive\문서\GitHub\-5-Image_SoundFile\Monologue.wav"
+      y, sr = librosa.load(file_path)
+      D = librosa.stft(y)
+      plt.figure(figsize=(16,6))
+      plt.plot(D)
+      plt.show()
+
+  스펙트그램 변환
+
+      file_path = r"C:\Users\PC\OneDrive\문서\GitHub\-5-Image_SoundFile\Monologue.wav"
+      y, sr = librosa.load(file_path)
+      D = librosa.amplitude_to_db(np.abs(librosa.stft(y)), ref=np.max)
+      plt.figure(figsize=(10, 6))
+      librosa.display.specshow(D, sr=sr, x_axis='time', y_axis='log')
+      plt.colorbar(format='%+2.0f dB')
+      plt.title('스펙트로그램')
+      plt.show()
+
+- 음성파일 잘라서 저장
+
+      def trim_audio_data(audio_file, save_file):
+          sr = 96000
+          sec = 30
+
+          y, sr = librosa.load(audio_file, sr=sr)
+
+          ny = y[:sr*sec]
+
+          librosa.output.write_wav(save_file + '.wav', ny, sr)
+
+      base_path = 'dataset/'
+
+      audio_path = base_path + '/audio'
+      save_path = base_path + '/save'
+
+      audio_list = os.listdir(audio_path)
+
+      for audio_name in audio_list:
+          if audio_name.find('wav') is not -1:
+              audio_file = audio_path + '/' + audio_name
+              save_file = save_path + '/' + audio_name[:-4]
+
+              trim_audio_data(r"C:\Users\PC\OneDrive\문서\GitHub\-5-Image_SoundFile\Monologue.mp3", r"C:\Users\PC\OneDrive\문서\GitHub\-5-Image_SoundFile\Monologue_modification.mp3")
