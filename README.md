@@ -133,7 +133,7 @@
 
 ## 음성 파일 처리
 
-- 라이브러리 불러오가
+- 라이브러리 불러오기
     
       import soundfile as sf
       import pydub
