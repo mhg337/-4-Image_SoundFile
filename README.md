@@ -1,5 +1,8 @@
 # 5주차 이미지, 음성파일 처리
 
+## 이미지 처리리
+
+
 라이브러리 불러오기
 
     from PIL import Image
@@ -127,3 +130,5 @@
         im.show()
 
 ![cat_8](https://github.com/mhg337/-5-Image_SoundFile/assets/144089001/fadf114f-5e52-46f3-8050-05eaf6b36bfa)
+
+## 음성 파일 처리
